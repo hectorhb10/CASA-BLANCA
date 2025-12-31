@@ -1,0 +1,238 @@
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+.product-detail-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* =========================
+   BREADCRUMB
+========================= */
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* =========================
+   GRID PRINCIPAL
+========================= */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* =========================
+   IMAGEN
+========================= */
+.product-detail-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* =========================
+   INFO PRODUCTO
+========================= */
+.product-detail-info h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.product-meta {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.product-price {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #111;
+}
+
+.product-short-desc {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* =========================
+   MEDIDAS
+========================= */
+.product-sizes {
+  margin-bottom: 20px;
+}
+
+.product-sizes span {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+.product-sizes button {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.product-sizes button.active {
+  background: #e6f0ff;
+  border-color: #4a90e2;
+  color: #2c5aa0;
+}
+
+/* =========================
+   CANTIDAD
+========================= */
+.product-quantity {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 16px;
+}
+
+.product-quantity button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.product-quantity button:hover {
+  background: #f2f2f2;
+}
+
+.product-quantity span {
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/* =========================
+   BOTÓN AGREGAR
+========================= */
+.add-to-cart-btn {
+  width: 100%;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #357ab8;
+  transform: translateY(-1px);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #bcdcff;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* =========================
+   TABS
+========================= */
+.product-tabs {
+  margin-top: 40px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 20px;
+}
+
+.product-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.product-tabs button.active {
+  border-bottom: 3px solid #4a90e2;
+  color: #4a90e2;
+}
+
+/* =========================
+   CONTENIDO TAB
+========================= */
+.product-tab-content {
+  padding: 20px 0;
+}
+
+/* =========================
+   RESPONSIVE MÓVIL
+========================= */
+@media (max-width: 768px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 24px;
+  }
+
+  .product-price {
+    font-size: 22px;
+  }
+
+  .add-to-cart-btn {
+    padding: 16px;
+    font-size: 18px;
+  }
+
+  .product-sizes button {
+    padding: 10px 14px;
+  }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

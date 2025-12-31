@@ -1,0 +1,33 @@
+.cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent; /* sin fondo */
+  border: none;
+  color: #00bcd4; /* azul como el teléfono */
+  font-size: 24px;
+  cursor: pointer;
+  position: relative;
+  padding: 4px 8px;
+}
+
+.cart-btn:hover {
+  color: #0097a7; /* azul más oscuro al pasar el mouse */
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #00bcd4;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
