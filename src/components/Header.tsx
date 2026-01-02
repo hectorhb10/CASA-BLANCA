@@ -6,7 +6,7 @@ export const Header = () => {
     <header className="header">
       <div className="header-container">
         <img
-          src="/img/logo/CASA-BLANCA-2.png"
+          src="./img/logo/CASA-BLANCA-2.png"
           alt="CASA BLANCA"
           className="header-banner"
         />

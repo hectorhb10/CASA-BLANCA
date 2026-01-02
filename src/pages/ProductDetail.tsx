@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { FaCartPlus } from "react-icons/fa";
 import "../styles/product-detail.css";
 
 export default function ProductDetail() {
-  const { name } = useParams();
+  const { name } = useParams<{ name: string }>();
   const { addToCart } = useCart();
 
   const product = products.find((p) => p.name === name);
@@ -15,7 +15,18 @@ export default function ProductDetail() {
   const [size, setSize] = useState<number>(1);
   const [loading, setLoading] = useState(false);
 
-  if (!product) return <p className="not-found">Producto no encontrado</p>;
+  if (!product) {
+    return <p className="not-found">Producto no encontrado</p>;
+  }
+
+  /* =========================
+     TEXTO DE UNIDAD
+  ========================= */
+  const getUnitLabel = () => {
+    if (product.unit === "liter") return "L";
+    if (product.unit === "piece") return "pz";
+    return "";
+  };
 
   /* =========================
      AGREGAR AL CARRITO
@@ -28,39 +39,45 @@ export default function ProductDetail() {
     setTimeout(() => {
       addToCart({
         ...product,
-        id: Number(`${product.id}${size}`),
+        id:
+          product.unit === "liter"
+            ? Number(`${product.id}${size}`)
+            : product.id,
         name:
-          product.unit === "liter" ? `${product.name} ${size}L` : product.name,
-        quantity, // ✅ EXACTAMENTE el marcador
+          product.unit === "liter"
+            ? `${product.name} ${size}${getUnitLabel()}`
+            : product.name,
+        quantity,
         size: product.unit === "liter" ? size : 1,
       });
 
-      // Opcional: reset
       setQuantity(1);
       setLoading(false);
     }, 2000);
   };
 
-  /* =========================
-     TEXTO DE MEDIDA
-  ========================= */
-  const getUnitLabel = () => {
-    if (product.unit === "liter") return "L";
-    if (product.unit === "piece") return "pz";
-    return "";
-  };
-
   return (
     <div className="product-detail-container">
+      {/* Breadcrumb */}
       <div className="breadcrumb">
-        Inicio › Productos › <span>{product.name}</span>
+        <Link to="/" className="breadcrumb-link">
+          Inicio
+        </Link>
+        {" › "}
+        <Link to="/" className="breadcrumb-link">
+          Productos
+        </Link>
+        {" › "}
+        <span>{product.name}</span>
       </div>
 
       <div className="product-detail-grid">
+        {/* Imagen */}
         <div className="product-detail-image">
           <img src={product.image} alt={product.name} />
         </div>
 
+        {/* Info */}
         <div className="product-detail-info">
           <h1>{product.name}</h1>
 
@@ -68,7 +85,7 @@ export default function ProductDetail() {
 
           <p className="product-price">${product.price} MXN</p>
 
-          {/* Medidas */}
+          {/* Medidas (solo litros) */}
           {product.unit === "liter" && (
             <div className="product-sizes">
               <span>Medida:</span>
@@ -99,8 +116,17 @@ export default function ProductDetail() {
             onClick={handleAddToCart}
             disabled={loading}
           >
-            {loading ? <span className="spinner" /> : <FaCartPlus />}
-            {loading ? "Agregando..." : "Agregar al carrito"}
+            {loading ? (
+              <>
+                <span className="spinner-inner" />
+                Agregando...
+              </>
+            ) : (
+              <>
+                <FaCartPlus />
+                Agregar al carrito
+              </>
+            )}
           </button>
         </div>
       </div>

@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://hectorubecerra.github.io/CASA-BLANCA",
+  "homepage": "https://hectorhb10.github.io/CASA-BLANCA",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

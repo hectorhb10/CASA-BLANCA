@@ -1,0 +1,205 @@
+/* =========================
+   FOOTER BASE
+========================= */
+.footer {
+  background: #02517c;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-family: inherit;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 32px;
+}
+
+/* =========================
+   COLUMNAS
+========================= */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   LOGO
+========================= */
+.footer-logo {
+  width: 150px;
+  margin-bottom: 14px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+.footer-text {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  max-width: 340px;
+  color: #eaf9ff;
+}
+
+/* =========================
+   WHATSAPP FOOTER BUTTON (REDONDO)
+========================= */
+.footer-whatsapp {
+  margin-top: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;              /* 👈 completamente redondo */
+  background: #25d366;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  text-decoration: none;
+}
+
+/* =========================
+   TITULOS
+========================= */
+.footer-col h4 {
+  font-size: 14px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+/* =========================
+   LISTAS
+========================= */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+/* =========================
+   LINKS COMO BOTÓN
+========================= */
+.footer-link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #eaf9ff;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.footer-link-btn:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FOOTER BOTTOM (CENTRADO CORRECTO)
+========================= */
+.footer-bottom {
+  max-width: 1100px;        /* mismo ancho que el footer */
+  margin: 30px auto 0;
+  padding-top: 16px;
+
+  display: flex;
+  justify-content: space-between;  /* 👈 CLAVE */
+  align-items: center;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+/* =========================
+   PAGOS
+========================= */
+.footer-payments {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-payments img {
+  height: 20px;
+}
+
+/* =========================
+   ICONO CON TEXTO (FOOTER)
+========================= */
+.footer-icon-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #eaf9ff;
+  text-align: center;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.footer-icon-text .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 16px 20px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    text-align: left;
+  }
+
+  .footer-text {
+    max-width: 100%;
+    font-size: 12.5px;
+  }
+
+  .footer-col h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer-link-btn {
+    font-size: 12.5px;
+  }
+
+.footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .footer-payments {
+    flex-wrap: wrap;
+  }
+
+  .footer-icon-text {
+    font-size: 10px;
+    gap: 3px;
+  }
+
+  .footer-icon-text .icon {
+    font-size: 16px;
+  }
+}

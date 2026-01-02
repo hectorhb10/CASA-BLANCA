@@ -236,3 +236,54 @@
     transform: rotate(360deg);
   }
 }
+
+/* =========================
+   BREADCRUMB
+========================= */
+.breadcrumb {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Links */
+.breadcrumb-link {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+
+/* Hover desktop */
+.breadcrumb-link:hover {
+  background-color: rgba(0, 188, 212, 0.12);
+  color: #008fa1;
+  text-decoration: underline;
+}
+
+/* Texto actual */
+.breadcrumb span {
+  color: #333;
+  font-weight: 600;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 640px) {
+  .breadcrumb {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .breadcrumb-link {
+    padding: 3px 5px;
+  }
+}

@@ -4,6 +4,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import ToastAlert from "./components/ToastAlert";
 import CartSidebar from "./components/CartSideBar";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/producto/:name" element={<ProductDetail />} />
       </Routes>
       <ToastAlert />
+      <Footer />
     </>
   );
 }
